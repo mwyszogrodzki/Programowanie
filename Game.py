@@ -31,6 +31,8 @@ while food > 0 or oxygen > 0:
     print("[2] Spróbować nawiązać kontakt z Ziemią")
     print("[3] Opuścić bazę")
     choice = input("Wybierz:")
+
+    #Przeszukiwanie bazy
     if choice in ("1", "[1]"):
         thing = random.choice(base)
         if thing == "nic":
@@ -86,8 +88,6 @@ while food > 0 or oxygen > 0:
                 else:
                     print("Nie udało się, ale może jeszcze uda Ci się znaleźć...")
                     inventory.append(thing)
-        print(base)
-
-print(food)
-print(inventory)
+        if choice in ("2", "[2]")
+            print("")
 
