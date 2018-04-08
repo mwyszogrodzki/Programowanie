@@ -8,29 +8,17 @@ name, health, intelligence, knowledge, strenght = creator.charackter_creator()
 #Wstępne ustalenia
 food = random.randint(10, 20)
 oxygen = random.randint(20, 40)
+help = random.randint(100, 300)
 days = 1
 inventory = []
 fuel = 5
 ifgarden = 0
+axis_x = 0
+axis_y = 0
 base = ["nic", "5 litrów paliwa", "nic", "racja żywnościowa", "nic", "2 racje żywnościowe",
                 "nic", "nasiona ziemniaków", "nic", "ziemia", "nic", "10 litrów paliwa", "nic"]
 
 #Funkcje
-def misson():
-    axis_x = 0
-    axis_y = 0
-    choice = ""
-    mission_inventory = []
-
-
-    while choice != "powrót":
-        print("Wyszedłeś z bazy, przed Tobą bezkresna planeta. Co robisz?")
-        print("[1} Idę pieszo")
-        print("[2] Jadę łazikiem")
-        print("(Paliwa starczy na:", fuel*10, "kilometrów)")
-        choice = input("Wybieram: ")
-        break
-
 def charackter_creator():
     """Stwórz nową postać"""
     health = 75
@@ -124,6 +112,82 @@ def show_inventory():
             print(i, end=" | ")
         print("\n")
 
+def mission():
+    def wheretogo():
+        print("Gdzie chcesz się udać?")
+        print("[1] Północ [2] Południe")
+        print("[3] Wschód [3] Zachód")
+        gochoice = input("Wybieram:")
+        if gochoice.lower() in ("1", "północ", "polnoc", "[1]"):
+            direction = 1
+        if gochoice.lower() in ("2", "południe", "poludnie", "[2]"):
+            direction = 2
+        if gochoice.lower() in ("3", "wschód", "wschod", "[3]"):
+            direction = 3
+        if gochoice.lower() in ("4", "zachod", "zachód", "[4]"):
+            direction = 4
+        return direction
+    print("Masz paliwa na", fuel_range, "kilometrów")
+    print("Jak chcesz podróżować?")
+    print("[1] Pieszo      [2] Łazikiem")
+    transport_type_input = input("Wybierz")
+    if transport_type_input.lower() in ("1", "[1]", "pieszo"):
+        transport_type = 1
+    elif transport_type_input.lower() in ("2", "[2]", "łazikiem", "lazikiem"):
+        transport_type = 2
+    while true:
+        print("Twoja pozycja to", axis_x,",",axis_y)
+        if transport_type == 1:
+            direction = wheretogo()
+            if direction == 1:
+                axis_y += 1
+            elif direction == 2:
+                axis_y -= 1
+            elif direction == 3:
+                axis_x += 1
+            elif direction == 4:
+                axis_x -= 1
+        if transport_type == 2
+            #Tutaj sprawdzić kwestie zmiany zasięgu.
+            print("Za pomocą łazika możesz przemieścić się o 5 kilometrów.")
+            direction = wheretogo()
+            if direction == 1:
+                axis_y += 5
+            elif direction == 2:
+                axis_y -= 5
+            elif direction == 3:
+                axis_x += 5
+            elif direction == 4:
+                axis_x -= 5
+            fuel -= 1
+            if axis_x == 0 and axis_y == 0:
+                print("Jesteś w bazie.")
+        if axis_x == 0 and axis_y == 0:
+        if axis_x == 0 and axis_y == 1:
+        if axis_x == 0 and axis_y == 2:
+        if axis_x == 0 and axis_y == 3:
+        if axis_x == 0 and axis_y == 4:
+        if axis_x == 0 and axis_y == 5:
+        if axis_x == 0 and axis_y == -1:
+        if axis_x == 0 and axis_y == -2:
+        if axis_x == 0 and axis_y == -3:
+        if axis_x == 0 and axis_y == -4:
+        if axis_x == 0 and axis_y == -5:
+        if axis_x == 1 and axis_y == 0:
+        if axis_x == 1 and axis_y == 1:
+        if axis_x == 1 and axis_y == -1:
+        if axis_x == 2 and axis_y == 0:
+        if axis_x == 2 and axis_y == 1:
+        if axis_x == 2 and axis_y == -1:
+        if axis_x == 3 and axis_y == 0:
+        if axis_x == 3 and axis_y == 1:
+        if axis_x == 3 and axis_y == -1:
+        if axis_x == 4 and axis_y == 0:
+        if axis_x == 4 and axis_y == 1:
+        if axis_x == 4 and axis_y == -1:
+        if axis_x == 5 and axis_y == 0:
+        if axis_x == 5 and axis_y == 1:
+        if axis_x == 5 and axis_y == -1:
 # Komunikat wstępny
 print("To już miesiąc odkąd jesteś na planecie Kepler-452b. \n Twoja załoga zginęła podczas lądowania, ponieważ jeden z silników \n"
       " w Waszym statku uległ zniszczeniu. Na szczęście przed Wami na tej planecie było już wiele misji. \n Baza obok której wylądowaliście "
