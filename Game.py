@@ -47,7 +47,7 @@ def charackter_creator():
         strenght = random.randrange(50, 100)
         health += 15
 
-    return name, health, intelligence, knowledge, strenght
+    return name, health, intelligence, knowledge, strenght, gender
 
 def searching(food, fuel, ifgarden):
     thing = random.choice(base)
@@ -147,7 +147,7 @@ def mission():
                 axis_x += 1
             elif direction == 4:
                 axis_x -= 1
-        if transport_type == 2
+        if transport_type == 2:
             #Tutaj sprawdzić kwestie zmiany zasięgu.
             print("Za pomocą łazika możesz przemieścić się o 5 kilometrów.")
             direction = wheretogo()
@@ -162,7 +162,7 @@ def mission():
             fuel -= 1
             if axis_x == 0 and axis_y == 0:
                 print("Jesteś w bazie.")
-        if axis_x == 0 and axis_y == 0:
+        """if axis_x == 0 and axis_y == 0:
         if axis_x == 0 and axis_y == 1:
         if axis_x == 0 and axis_y == 2:
         if axis_x == 0 and axis_y == 3:
@@ -187,7 +187,7 @@ def mission():
         if axis_x == 4 and axis_y == -1:
         if axis_x == 5 and axis_y == 0:
         if axis_x == 5 and axis_y == 1:
-        if axis_x == 5 and axis_y == -1:
+        if axis_x == 5 and axis_y == -1:"""
 # Komunikat wstępny
 print("To już miesiąc odkąd jesteś na planecie Kepler-452b. \n Twoja załoga zginęła podczas lądowania, ponieważ jeden z silników \n"
       " w Waszym statku uległ zniszczeniu. Na szczęście przed Wami na tej planecie było już wiele misji. \n Baza obok której wylądowaliście "

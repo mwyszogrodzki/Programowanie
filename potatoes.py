@@ -1,4 +1,3 @@
-#Tutaj zrobić zasedznie ziemniaczków
+num1 = "625"
 
-def growingpotatoes():
-    print("Ziemniaczki!")
+print(num1[-1])
