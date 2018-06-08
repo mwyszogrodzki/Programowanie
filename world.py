@@ -1,6 +1,7 @@
 #Wyjście na zewnątrz
 
 fuel = 5
+import Game
 
 def charackter_creator():
     """Stwórz nową postać"""
@@ -32,5 +33,4 @@ def charackter_creator():
 
     return name, health, intelligence, knowledge, strenght
 
-
-misson()
+print(Game.twooprions("Tak", "Nie"))
