@@ -15,7 +15,7 @@ actions = { 1 : "Rozmawiam z bezdomnym na rynku",
 things = { '1' : {"name": "Miecz Prezydencki",
                 "type": 1,
                 "value": 50,
-                "cost": 2000},
+                "cost": 5000},
 '2' : {"name": "Tabletka uzdrawiająca",
                 "type": 2,
                 "value": 10,
@@ -23,7 +23,10 @@ things = { '1' : {"name": "Miecz Prezydencki",
 '3': {"name": "Czerwony talizman",
                 "type": 3,
                 "value": 20,
-                "cost": 15},}
+                "cost": 15},
+'4': {"name": "Szabelka marszałkowska",
+      "type": 1,
+      "value": 2000}
 
 class character(object):
     money = 500
@@ -343,6 +346,27 @@ def shop():
         else:
             break
 
+def decoding():
+    coded = "Ipnkdc oydzredntg. Iygiów w podyzd. Oyzraptlj oyzdmpwę."
+    decoded = "Koniec prezydenta. Kraków w operze. Przygotuj przemowę."
+    number = 0
+    for i in coded:
+        while True:
+            if i == " " or i == ".":
+                number += 1
+                break
+            else:
+                print("GA-DE-RY-PO-LU-KI")
+                print("Literka:", i)
+                letter = input(">>")
+                if letter.lower() == decoded[number].lower():
+                    print("Dobrze.")
+                    number += 1
+                    break
+                else:
+                    continue
+    print("Rozszyfrowana wiadomość to:")
+    print('"', decoded, '"')
 
 def warszawa():
     global actions
@@ -623,7 +647,7 @@ def warszawa():
             choice = input(">>")
             if choice == "1":
                 print("W kopercie znajduje się dziwny napis:")
-                ### WPISAĆ TUTAJ TREŚĆ LISTU
+                print('"Ipnkdc oydzredntg. Iygiów w podyzd. Oyzraptlj oyzdmpwę."')
                 print("To chyba kod...")
                 while True:
                     print("[1] Próbuję rozszyfrować")
