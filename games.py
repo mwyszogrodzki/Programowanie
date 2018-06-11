@@ -38,16 +38,16 @@ def lotto():
         print("Liczba " + user3 + " nie szostała wylosowana")
 
     if int(user4) in [number1, number2, number3, number4, number5, number6]:
-        print("Liczba " + user3 + " została wylosowana.")
+        print("Liczba " + user4 + " została wylosowana.")
         correct += 1
     else:
-        print("Liczba " + user3 + " nie szostała wylosowana")
+        print("Liczba " + user4 + " nie szostała wylosowana")
 
     print("Trafiłeś na " + str(correct) + " spośród 6 liczb")
     print("Szczęśliwe liczby to: ", number1, number2, number3, number4, number5, number6)
     return correct
 
-def zgadywanie():
+def guessing():
     number = random.randint(1, 100)
     user_number = ' '
     times = 6
@@ -79,8 +79,8 @@ def zgadywanie():
     return succes
 
 def decoding():
-    coded = "Ipnkdc oydzredntg. Iygiów w podyzd. Oyzraptlj oyzdmpwę."
-    decoded = "Koniec prezydenta. Kraków w operze. Przygotuj przemowę."
+    coded = "Ipnkdc oydzredntg. Iygiow w podyzd. Oyzraptlj oyzdmpwe."
+    decoded = "Koniec prezydenta. Krakow w operze. Przygotuj przemowe."
     number = 0
     for i in coded:
         while True:
@@ -100,3 +100,22 @@ def decoding():
     print("Rozszyfrowana wiadomość to:")
     print('"', decoded, '"')
 
+def associations():
+    associations = {'film': ('kino','aktor','kamera'),
+                'miasto': ('budynki','ulice','samochody','ulica', 'blok', 'budynek', 'samochod', 'samochód'),
+                'las': ('drzewa','mech','grzyby','grzyb','drzewo')}
+    points = 0
+    for word in associations:
+        guess = input('Co ci sie kojarzy ze slowem {}? '.format(word))
+        if guess in associations[word]:
+            points += 1
+    print("Masz", points, "punkty")
+    if points == 3:
+        exp = 15
+    elif points == 2:
+        exp = 10
+    elif points == 1:
+        exp = 5
+    else:
+        exp = 0
+    return exp
